@@ -1,0 +1,54 @@
+## **CodeBook**
+This is the code book for the project
+
+## **Data Source** 
+First of all the original data was obtain from:
+
+[https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip]()
+
+which is more detail about the collection of the data from:
+
+[http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones]()
+
+
+The original file contain is as below:
+
+README.txt (which describe how the data was collect and the data information)
+features_info.txt (which describe the feature of the data set)
+features.txt (the data that been collected in the experiment)
+activity_labels.txt (the list of activity that carry out in this experiment)
+
+In the train file it contain:
+y_train.txt (which is the activity carry out by the subject for training data set)
+X_train.txt (which is the collected features data for training data set)
+subject_train.txt (which is the subject in training data set)
+
+In the test file it contain:
+y_test.txt (which is the activity carry out by the subject for test data set)
+X_test.txt (which is the collected features data for test data set)
+subject_test.txt (which is the subject in test data set)
+
+## **Data Processing**
+In this project first of all I download the original data zip file and unzip it manually to my R
+working directory. Then I using R program read the original data thorugh R script call 
+"Generate Tidy Data.R" which contain in my Git repo.
+
+The original data file that has been obtain to generate the TidyDataSet.txt are:
+
+features.txt (which use to get the labels for each features)
+activity_labels.txt (which use to identify the value meaning in original activity)
+y_train.txt (which is the activity carry out by the subject for training data set)
+X_train.txt (which is the collected features data for training data set)
+subject_train.txt (which is the subject in training data set)
+y_test.txt (which is the activity carry out by the subject for test data set)
+X_test.txt (which is the collected features data for test data set)
+subject_test.txt (which is the subject in test data set)
+
+After obtaining the data, all the data has been merge up to be a large data set. In my complete data set it was having an addtion varaible which is category to idetify the data set belong to train or test data. 
+
+Next from the large data set I extract the all the mean and standard deviation data from the features variable. After that, the original activity value has been convert into the names for the activity such as WALKING, LAYING, SITTING, etc.
+
+Futheremore, the data varaible names has been rename to more descriptive and the typo error from original varaible names, such as Acc in original data indicate Accelerometer which status in features_info.txt file. 
+
+Lastly, the TidyDataSet.txt has been generate which is the independent tidy data set with the average of each variable for each activity and each subject.
+
